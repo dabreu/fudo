@@ -1,0 +1,62 @@
+@token = your_token_here
+
+### Create a new user
+POST http://localhost:9292/api/users
+Content-Type: application/json
+
+{
+  "name": "Mariana",
+  "email": "mariana@example.com",
+  "password": "1234"
+}
+
+### Login a user
+POST http://localhost:9292/api/login
+Content-Type: application/json
+
+{
+  "email": "mariana@example.com",
+  "password": "1234"
+}
+
+### Get a list of all users
+GET http://localhost:9292/api/users
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+### Get a user by ID
+GET http://localhost:9292/api/users/1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+### Create a product
+POST http://localhost:9292/api/products
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "Product 1"
+}
+
+### Get a list of all products
+GET http://localhost:9292/api/products
+Content-Type: application/json
+Authorization: Bearer {{token}}
+Accept-Encoding: 
+
+### Get task status
+GET http://localhost:9292/api/tasks/1/status
+Content-Type: application/json
+Authorization: Bearer {{token}}
+Accept-Encoding: gzip
+
+### Get all tasks
+GET http://localhost:9292/api/tasks
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+### Static file openapi.yaml
+GET http://localhost:9292/openapi.yaml
+
+### Static file AUTHORS
+GET http://localhost:9292/AUTHORS
